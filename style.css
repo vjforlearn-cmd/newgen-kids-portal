@@ -1,1 +1,141 @@
-body{font-family:Arial;background:#fff8f3;color:#333} .logo{height:60px} .hero{background:#f47c3c;color:#fff;padding:4rem;text-align:center} .btn{padding:.7rem 1.4rem;border-radius:30px;text-decoration:none} .primary{background:#5cc6ba;color:#fff} .secondary{background:#333;color:#fff} .site-footer{text-align:center;padding:1rem}
+:root {
+  --primary: #f26f4f;
+  --secondary: #4db6ac;
+  --background: #fff6f1;
+  --dark: #2f2f2f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--background);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Header */
+.site-header {
+  background: #ffffff;
+  border-bottom: 4px solid var(--primary);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.logo {
+  height: 60px;
+}
+
+/* Hero */
+.hero {
+  background:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 6rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.15rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin: 0.75rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.primary {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.secondary {
+  background: var(--secondary);
+  color: #ffffff;
+}
+
+/* Cards */
+.features {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* Pages */
+.page {
+  padding: 3rem 0;
+}
+
+.page h1 {
+  color: var(--primary);
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 14px;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--primary);
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
