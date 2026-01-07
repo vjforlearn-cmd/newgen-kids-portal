@@ -139,3 +139,80 @@ body {
   padding: 1.5rem;
   margin-top: 3rem;
 }
+
+/* ===== Programs Page ===== */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.program-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.program-card .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Program Colors */
+.program-card.infant {
+  border-top: 6px solid #f7b267;
+}
+
+.program-card.toddler {
+  border-top: 6px solid #70c1b3;
+}
+
+.program-card.preschool {
+  border-top: 6px solid #f25f5c;
+}
+
+.program-card.schoolage {
+  border-top: 6px solid #247ba0;
+}
+
+/* ===== Contact Page ===== */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contact-info {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.contact-info h2 {
+  color: var(--primary);
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: 18px;
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
