@@ -153,10 +153,53 @@ body {
 }
 
 .card {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  background: linear-gradient(180deg, #ffffff 0%, #fffaf7 100%);
+  padding: 2.2rem;
+  border-radius: 20px;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(242, 111, 79, 0.05);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Accent bar */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary)
+  );
+}
+
+/* Hover interaction */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(242, 111, 79, 0.12);
+}
+
+/* Headings inside cards */
+.card h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+  color: var(--primary);
+}
+
+/* Card text */
+.card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
 }
 
 /* Pages */
