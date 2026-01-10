@@ -1,20 +1,29 @@
 :root {
   --primary: #f26f4f;
   --secondary: #4db6ac;
-  --background: #fff6f1;
-  --dark: #2f2f2f;
+  --dark: #1f1f1f;
 }
 
+/* Reset */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  background: var(--background);
-  color: var(--dark);
-  line-height: 1.6;
+  color: white;
+}
+
+/* Header */
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  border-bottom: 4px solid var(--primary);
+  z-index: 1000;
 }
 
 .container {
@@ -23,197 +32,101 @@ body {
   margin: auto;
 }
 
-/* Header */
-.site-header {
-  background: #ffffff;
-  border-bottom: 4px solid var(--primary);
-}
-
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
+}
+
+.logo {
+  height: 55px;
 }
 
 .nav a {
   margin-left: 1rem;
   text-decoration: none;
   font-weight: 600;
-  color: var(--dark);
+  color: #333;
 }
 
-.logo {
-  height: 60px;
-}
-
-/* Hero */
-.hero {
-  background:
-    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
-/*    url("https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1600&q=80"); */
-  url("assets/hero.jpg");
+/* Full Page Hero */
+.hero-full {
+  min-height: 100vh;
+  background: url("assets/hero.jpg") no-repeat center center;
   background-size: cover;
-  background-position: center;
-  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dark overlay for readability */
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px; /* space for fixed header */
+}
+
+.hero-content {
   text-align: center;
-  padding: 6rem 1rem;
+  max-width: 800px;
+  padding: 2rem;
 }
 
-.hero h1 {
-  font-size: 2.6rem;
+.hero-content h1 {
+  font-size: 2.8rem;
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
-.hero p {
-  max-width: 700px;
-  margin: auto;
-  font-size: 1.15rem;
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
 /* Buttons */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .btn {
-  display: inline-block;
-  margin: 0.75rem;
-  padding: 0.75rem 1.6rem;
+  padding: 0.9rem 1.8rem;
   border-radius: 30px;
   font-weight: 700;
   text-decoration: none;
+  font-size: 1rem;
 }
 
 .primary {
   background: var(--primary);
-  color: #ffffff;
+  color: white;
 }
 
 .secondary {
   background: var(--secondary);
-  color: #ffffff;
+  color: white;
 }
 
-/* Cards */
-.features {
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.card {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-/* Pages */
-.page {
-  padding: 3rem 0;
-}
-
-.page h1 {
-  color: var(--primary);
-}
-
-/* Gallery */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
-
-.gallery-grid img {
-  width: 100%;
-  border-radius: 14px;
-}
-
-/* Footer */
-.site-footer {
-  background: var(--primary);
-  color: #ffffff;
-  text-align: center;
-  padding: 1.5rem;
-  margin-top: 3rem;
-}
-
-/* ===== Programs Page ===== */
-.program-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.program-card {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.program-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-}
-
-.program-card .icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-/* Program Colors */
-.program-card.infant {
-  border-top: 6px solid #f7b267;
-}
-
-.program-card.toddler {
-  border-top: 6px solid #70c1b3;
-}
-
-.program-card.preschool {
-  border-top: 6px solid #f25f5c;
-}
-
-.program-card.schoolage {
-  border-top: 6px solid #247ba0;
-}
-
-/* ===== Contact Page ===== */
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.contact-info {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-}
-
-.contact-info h2 {
-  color: var(--primary);
-}
-
-.contact-map iframe {
-  width: 100%;
-  height: 320px;
-  border: 0;
-  border-radius: 18px;
-}
-
-/* Mobile Friendly */
+/* Responsive */
 @media (max-width: 768px) {
-  .contact-layout {
-    grid-template-columns: 1fr;
+  .hero-content h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-content p {
+    font-size: 1.05rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
