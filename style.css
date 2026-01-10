@@ -44,7 +44,13 @@ body {
 }
 
 .logo {
-  height: 60px;
+  height: 90px;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    height: 70px;
+  }
 }
 
 /* ===== HERO VIDEO ===== */
