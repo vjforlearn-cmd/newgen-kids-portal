@@ -368,56 +368,46 @@ body {
   margin: 0 auto;
 }
 
-/* Video Styling for all devices */
+/* Gallery Grid: Returns images to their natural proportions */
+.gallery-grid {
+  display: grid;
+  /* Adjusts columns based on screen size without forcing image height */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.gallery-grid img {
+  width: 100%;    /* Ensures image stays within its grid column */
+  height: auto;   /* RETURNS TO ORIGINAL: Image keeps natural height */
+  border-radius: 8px; /* Optional: adds a slight professional curve */
+}
+
+/* Video Tour Styling: Remains fixed and responsive */
 .video-tour {
-  /* Added margin-top to separate it from the images above */
-  margin: 40px 0 40px; 
+  margin: 40px 0;
   text-align: center;
+  border-top: 1px solid #eee; /* Adds a nice separator after images */
+  padding-top: 30px;
+}
+
+.video-tour h2 {
+  margin-bottom: 20px;
 }
 
 .facility-video {
   width: 100%;             
-  max-width: 800px;        
-  height: auto;            
-  border-radius: 12px;     
+  max-width: 800px; /* Limits video width on desktop */
+  height: auto;
+  border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  display: block;
-  margin: 0 auto;          
 }
 
-/* Responsive Gallery Grid */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 250px;           
-  object-fit: cover;       
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-/* Hover effect for desktop users */
-.gallery-grid img:hover {
-  transform: scale(1.03);
-}
-
-/* Mobile Adjustments (Screen width below 600px) */
+/* Mobile Adjustments */
 @media (max-width: 600px) {
-  .site-header .nav {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 1.5rem;
-  }
-  
   .gallery-grid {
-    gap: 15px;             
+    grid-template-columns: 1fr; /* Single column for images on small phones */
+    gap: 15px;
   }
 }
 
